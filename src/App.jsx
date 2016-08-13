@@ -105,10 +105,20 @@ var App = React.createClass({
 	render: function() {
 		return (
 			<section className='app' ref='app'>
-			    <Header favouritesOnly={this.state.favouritesOnly} onFavouritesShow={this.onFavouritesShow}/>
-			    <Search onKeyUp={this.onSearch} placeholder={this.state.favouritesOnly ? 'Search your favourites' : 'Search Games'}/>
-			    <DetailedCard item={this.state.detailedGame} onClose={this.onDetailedClose} />
-                <CardList items={this.getModel()} onFavourited={this.onFavourited} onCardClick={this.onCardClick}/>
+			    <Header 
+			        favouritesOnly={this.state.favouritesOnly} 
+			        onFavouritesShow={this.onFavouritesShow}/>
+			    <Search 
+			        onKeyUp={this.onSearch} 
+			        placeholder={this.state.favouritesOnly ? 'Search your favourites' : 'Search Games'}/>
+			    <DetailedCard 
+			        item={this.state.detailedGame} 
+			        onFavourited={this.onFavourited} 
+			        onClose={this.onDetailedClose} />
+                <CardList 
+                    items={this.getModel()} 
+                    onFavourited={this.onFavourited} 
+                    onCardClick={this.onCardClick}/>
             </section>        
 		);
 	}

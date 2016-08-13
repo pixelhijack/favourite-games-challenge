@@ -22129,10 +22129,20 @@
 	        return _react2.default.createElement(
 	            'section',
 	            { className: 'app', ref: 'app' },
-	            _react2.default.createElement(_Header2.default, { favouritesOnly: this.state.favouritesOnly, onFavouritesShow: this.onFavouritesShow }),
-	            _react2.default.createElement(_Search2.default, { onKeyUp: this.onSearch, placeholder: this.state.favouritesOnly ? 'Search your favourites' : 'Search Games' }),
-	            _react2.default.createElement(_DetailedCard2.default, { item: this.state.detailedGame, onClose: this.onDetailedClose }),
-	            _react2.default.createElement(_CardList2.default, { items: this.getModel(), onFavourited: this.onFavourited, onCardClick: this.onCardClick })
+	            _react2.default.createElement(_Header2.default, {
+	                favouritesOnly: this.state.favouritesOnly,
+	                onFavouritesShow: this.onFavouritesShow }),
+	            _react2.default.createElement(_Search2.default, {
+	                onKeyUp: this.onSearch,
+	                placeholder: this.state.favouritesOnly ? 'Search your favourites' : 'Search Games' }),
+	            _react2.default.createElement(_DetailedCard2.default, {
+	                item: this.state.detailedGame,
+	                onFavourited: this.onFavourited,
+	                onClose: this.onDetailedClose }),
+	            _react2.default.createElement(_CardList2.default, {
+	                items: this.getModel(),
+	                onFavourited: this.onFavourited,
+	                onCardClick: this.onCardClick })
 	        );
 	    }
 	});
@@ -23854,6 +23864,11 @@
 	                _react2.default.createElement(
 	                    'h3',
 	                    null,
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'card__isFavourite', onClick: this.props.onFavourited.bind(null, this.props.item.id) },
+	                        this.props.item.isFavourite ? '★' : '☆'
+	                    ),
 	                    _react2.default.createElement(
 	                        'span',
 	                        { className: 'card__name' },

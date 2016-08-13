@@ -36,6 +36,9 @@ var DetailedCard = React.createClass({
 			<div className={ (this.props.item && this.props.item.short.length) ? 'card__detailed-wrapper' : 'card__detailed-wrapper hidden'}>
     			<article className='card__detailed'>
                     <h3>
+                        <span className='card__isFavourite' onClick={this.props.onFavourited.bind(null, this.props.item.id)}>
+                            {this.props.item.isFavourite ? '★' : '☆'}
+                        </span>
                         <span className='card__name'>{this.props.item.name}</span>
                     </h3>
                     <span className='card__close' onClick={this.onQuit}> ✖ </span>
