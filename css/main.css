@@ -1,0 +1,283 @@
+*, 
+*:before, 
+*:after {
+  box-sizing: border-box;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.hidden {
+    display: none!important;    
+}
+
+.app__viewSwitch {
+    margin: 10px 0 10px 15px;
+    font-size: 18px;
+}
+.app__viewSwitch span{
+    padding: 0 0 2px 5px;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+    color: #a7a7a7;
+}
+.app__viewSwitch span.active{
+    color: #000;
+}
+
+.search {
+    height: 60px;
+    width: 70%;
+    outline: 0;
+    border: 10px solid #efefef;
+    padding: 0 10px;
+    font-size: 24px;
+}
+
+.cardList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cardList .card {
+    flex: 1;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.33s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cardList .card, 
+.card__detailed {
+    -webkit-animation: popIn .33s normal forwards cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+       -moz-animation: popIn .33s normal forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: popIn .33s normal forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cardList .card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card h3 {
+    font-size: 1.2em;
+    line-height: 1em;
+    height: 1em;
+    font-weight: normal;
+}
+
+.card__detailed h3 {
+    padding: 0 0 0 20px;
+}
+
+.card__isFavourite {
+    cursor: pointer;
+    font-size: 30px;
+    padding: 0 10px;
+}
+
+.card__detailed-wrapper {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.66);
+}
+
+.card__detailed {
+    z-index: 2;
+    max-width: 764px;
+    width: 80%;
+    height: 60%;
+    margin: 0 auto;
+    position: fixed;
+    top: 25%;
+    left: 10%;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card__detailed img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.card__detailed .card__close {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 2em;
+    color: #efefef;
+}
+
+.card__progressbar {
+    background: rgba(0,0,0,.66) url('../src/progressbar.gif') no-repeat center center;
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: 260px;
+    display: none;
+}
+
+.card__progressbar.playing {
+    display: block;
+}
+
+.card__CTA {
+    display: inline-block;
+    zoom: 1;
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0.5em 1em;
+    color: #444; /* rgba not supported (IE 8) */
+    color: rgba(0, 0, 0, 0.80); /* rgba supported */
+    border: 1px solid #999;  /*IE 6/7/8*/
+    border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+    background-color: #E6E6E6;
+    text-decoration: none;
+    border-radius: 2px;
+    background-color: rgb(0, 120, 231);
+    color: #fff;
+    margin: 10px 20px;
+}
+
+.card__CTA:hover,
+.card__CTA:focus {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000',GradientType=0);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0,0,0, 0.05)), to(rgba(0,0,0, 0.10)));
+    background-image: -webkit-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+    background-image: -moz-linear-gradient(top, rgba(0,0,0, 0.05) 0%, rgba(0,0,0, 0.10));
+    background-image: -o-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+    background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .cardList .card {
+        flex: 1 45%;
+    }
+    
+    .card__detailed {
+        height: 33%;
+    }
+    
+    .app__viewSwitch {
+        margin: 10px 0 25px 15px;
+        font-size: 4em;
+    }
+    
+    .card__detailed .card__close {
+        font-size: 5em;
+        top: -10px;
+    }
+    
+    .card h3 { 
+        font-size: 2em;
+    }
+    .card__detailed h3 {
+        font-size: 3em;
+    }
+    
+    .card__isFavourite {
+        font-size: 50px;
+    }
+    
+    .card__CTA {
+        font-size: 200%;
+    }
+    
+    .search {
+        height: 100px;
+        font-size: 42px;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .cardList .card {
+        flex: 1 30%;
+    }
+    
+    .card__detailed {
+        height: 33%;
+    }
+    
+    .app__viewSwitch {
+        margin: 10px 0 25px 15px;
+        font-size: 3em;
+    }
+    
+    .card__detailed .card__close {
+        font-size: 5em;
+        top: -10px;
+    }
+    
+    .card h3,
+    .card__detailed h3 {
+        font-size: 2em;
+    }
+    
+    .card__isFavourite {
+        font-size: 50px;
+    }
+    
+    .card__CTA {
+        font-size: 200%;
+    }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+    .cardList .card {
+        flex: 1 20%;
+    }
+    .card__detailed {
+        width: 50%;
+        left: 25%;
+    }
+}
+
+/* Large screens ----------- */
+@media only screen  and (min-width : 1824px) {
+    .cardList .card {
+        flex: 1 20%;
+    }
+    .card__detailed {
+        width: 32%;
+        left: 32%;
+    }
+}
+
+@-webkit-keyframes popIn {
+  0% { opacity: 0; transform: scale(.3);}
+  100% { opacity: 1; transform: scale(1);}
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(.3);}
+  100% { opacity: 1; transform: scale(1);}
+}
