@@ -23781,22 +23781,29 @@
 	        */
 	        return _react2.default.createElement(
 	            'article',
-	            { className: 'card', onClick: this.props.onCardClick.bind(null, this.props.id) },
+	            {
+	                className: 'card',
+	                onClick: this.props.onCardClick.bind(null, this.props.id) },
 	            _react2.default.createElement(
 	                'h3',
 	                null,
 	                _react2.default.createElement(
 	                    'span',
-	                    { className: 'card__isFavourite', onClick: this.props.onFavourited.bind(null, this.props.id) },
+	                    {
+	                        className: 'card__isFavourite',
+	                        onClick: this.props.onFavourited.bind(null, this.props.id) },
 	                    this.props.isFavourite ? '★' : '☆'
 	                ),
 	                _react2.default.createElement(
 	                    'span',
-	                    { className: 'card__name' },
+	                    {
+	                        className: 'card__name' },
 	                    this.props.name
 	                )
 	            ),
-	            _react2.default.createElement('img', { className: 'card__image', src: imgSrc })
+	            _react2.default.createElement('img', {
+	                className: 'card__image',
+	                src: imgSrc })
 	        );
 	    }
 	});
@@ -23857,7 +23864,8 @@
 	
 	        return _react2.default.createElement(
 	            'div',
-	            { className: this.props.item && this.props.item.short.length ? 'card__detailed-wrapper' : 'card__detailed-wrapper hidden' },
+	            {
+	                className: this.props.item && this.props.item.short.length ? 'card__detailed-wrapper' : 'card__detailed-wrapper hidden' },
 	            _react2.default.createElement(
 	                'article',
 	                { className: 'card__detailed' },
@@ -23866,27 +23874,37 @@
 	                    null,
 	                    _react2.default.createElement(
 	                        'span',
-	                        { className: 'card__isFavourite', onClick: this.props.onFavourited.bind(null, this.props.item.id) },
+	                        {
+	                            className: 'card__isFavourite',
+	                            onClick: this.props.onFavourited.bind(null, this.props.item.id) },
 	                        this.props.item.isFavourite ? '★' : '☆'
 	                    ),
 	                    _react2.default.createElement(
 	                        'span',
-	                        { className: 'card__name' },
+	                        {
+	                            className: 'card__name' },
 	                        this.props.item.name
 	                    )
 	                ),
 	                _react2.default.createElement(
 	                    'span',
-	                    { className: 'card__close', onClick: this.onQuit },
-	                    ' ✖ '
+	                    {
+	                        className: 'card__close',
+	                        onClick: this.onQuit },
+	                    '✖'
 	                ),
 	                _react2.default.createElement(
 	                    'button',
-	                    { className: 'card__CTA', onClick: this.onPlay },
+	                    {
+	                        className: 'card__CTA',
+	                        onClick: this.onPlay },
 	                    'PLAY!'
 	                ),
-	                _react2.default.createElement('span', { className: this.state.isPlaying ? 'card__progressbar playing' : 'card__progressbar' }),
-	                _react2.default.createElement('img', { className: 'card__image', src: !!this.props.item.short.length ? imgSrc : '' })
+	                _react2.default.createElement('span', {
+	                    className: this.state.isPlaying ? 'card__progressbar playing' : 'card__progressbar' }),
+	                _react2.default.createElement('img', {
+	                    className: 'card__image',
+	                    src: !!this.props.item.short.length ? imgSrc : '' })
 	            )
 	        );
 	    }

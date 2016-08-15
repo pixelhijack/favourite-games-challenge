@@ -13,14 +13,23 @@ var Card = React.createClass({
             This can be overcome with Redux dispatchers. 
         */
         return (
-			<article className='card' onClick={this.props.onCardClick.bind(null, this.props.id)}>
+			<article 
+			    className='card' 
+			    onClick={this.props.onCardClick.bind(null, this.props.id)}>
                 <h3>
-                    <span className='card__isFavourite' onClick={this.props.onFavourited.bind(null, this.props.id)}>
-                        {this.props.isFavourite ? '★' : '☆'}
+                    <span 
+                        className='card__isFavourite' 
+                        onClick={this.props.onFavourited.bind(null, this.props.id)}>
+                            {this.props.isFavourite ? '★' : '☆'}
                     </span>
-                    <span className='card__name'>{this.props.name}</span>
+                    <span 
+                        className='card__name'>
+                            {this.props.name}
+                    </span>
                 </h3>
-                <img className='card__image' src={imgSrc}/>
+                <img 
+                    className='card__image' 
+                    src={imgSrc}/>
             </article>        
 		);
     }
